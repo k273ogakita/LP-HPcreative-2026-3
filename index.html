@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教室・サロン向け｜3万円台ホームページ制作｜無料お試し</title>
+
+  <!-- ===== Meta(Facebook) Pixel ===== -->
+  <!-- ▼ YOUR_PIXEL_ID を実際のピクセルIDに書き換えてください ▼ -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- ===== /Meta Pixel ===== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --orange:        #F97316;
+      --orange-light:  #FED7AA;
+      --orange-pale:   #FFF7ED;
+      --orange-mid:    #FB923C;
+      --orange-dark:   #EA580C;
+      --text-main:     #3B2A1A;
+      --text-sub:      #78624E;
+      --white:         #FFFFFF;
+      --radius:        16px;
+      --line-green:    #06C755;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      background: var(--orange-pale);
+      color: var(--text-main);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ====== FLOATING LINE BUTTON ====== */
+    .float-line {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 999;
+      background: var(--line-green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(6,199,85,.4);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: float-bounce 2.5s ease-in-out infinite;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-line:hover { transform: scale(1.06); box-shadow: 0 6px 28px rgba(6,199,85,.55); }
+    @keyframes float-bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-line svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    /* ====== SECTION WRAPPER ====== */
+    .section { width: 100%; padding: 64px 20px; }
+    .inner { max-width: 680px; margin: 0 auto; }
+
+    /* ====== HERO ====== */
+    .hero {
+      background: linear-gradient(160deg, var(--orange) 0%, var(--orange-mid) 60%, #FBBF7A 100%);
+      padding: 72px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 20%, rgba(255,255,255,.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.25);
+      border: 2px solid rgba(255,255,255,.6);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 5px 18px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      letter-spacing: .06em;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(26px, 6vw, 40px);
+      font-weight: 900;
+      line-height: 1.4;
+      letter-spacing: .02em;
+      text-shadow: 0 2px 12px rgba(180,80,0,.3);
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: #fff;
+      color: var(--orange-dark);
+      padding: 2px 10px;
+      border-radius: 6px;
+    }
+    .hero-price {
+      margin-top: 28px;
+      color: #fff;
+      font-size: clamp(20px, 5vw, 30px);
+      font-weight: 900;
+      line-height: 1.5;
+    }
+    .hero-price span {
+      font-size: clamp(30px, 7vw, 46px);
+    }
+    .hero-free {
+      margin-top: 32px;
+      display: inline-block;
+      background: #fff;
+      color: var(--orange-dark);
+      font-size: clamp(15px, 4vw, 20px);
+      font-weight: 900;
+      padding: 10px 32px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+      letter-spacing: .04em;
+    }
+    .hero-free small {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 2px;
+      letter-spacing: .1em;
+    }
+
+    /* ====== PROBLEM ====== */
+    .problem {
+      background: var(--white);
+      padding: 64px 20px;
+    }
+    .section-label {
+      display: inline-block;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+      letter-spacing: .08em;
+    }
+    .section-title {
+      font-size: clamp(20px, 5vw, 30px);
+      font-weight: 900;
+      line-height: 1.5;
+      color: var(--text-main);
+    }
+    .section-title em {
+      font-style: normal;
+      color: var(--orange-dark);
+    }
+    .check-list {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .check-list li {
+      background: var(--orange-pale);
+      border-left: 4px solid var(--orange);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .check-list li::before { content: '✓ '; color: var(--orange); font-weight: 900; }
+    .problem-text {
+      margin-top: 28px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+    .highlight-box {
+      margin-top: 24px;
+      background: linear-gradient(135deg, var(--orange-pale), #FFF);
+      border: 2px solid var(--orange-light);
+      border-radius: var(--radius);
+      padding: 24px;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.9;
+    }
+    .highlight-box .big {
+      font-size: clamp(18px,4vw,24px);
+      color: var(--orange-dark);
+      font-weight: 900;
+    }
+
+    /* ====== SOLUTION ====== */
+    .solution {
+      background: var(--orange-pale);
+      padding: 64px 20px;
+    }
+    .solution-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      margin-top: 28px;
+      box-shadow: 0 2px 16px rgba(249,115,22,.1);
+      border: 1.5px solid var(--orange-light);
+    }
+    .solution-card p { font-size: 16px; line-height: 1.9; margin-bottom: 16px; }
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .bullet-list li {
+      font-size: 16px;
+      font-weight: 500;
+      padding-left: 20px;
+      position: relative;
+    }
+    .bullet-list li::before {
+      content: '●';
+      color: var(--orange);
+      position: absolute;
+      left: 0;
+      font-size: 10px;
+      top: 6px;
+    }
+
+    /* ====== FREE TRIAL ====== */
+    .trial {
+      background: linear-gradient(160deg, var(--orange-dark) 0%, var(--orange) 100%);
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .trial-badge {
+      display: inline-block;
+      background: #fff;
+      color: var(--orange-dark);
+      font-size: clamp(18px,4.5vw,26px);
+      font-weight: 900;
+      padding: 10px 36px;
+      border-radius: 50px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
+      letter-spacing: .04em;
+    }
+    .trial-desc {
+      color: rgba(255,255,255,.95);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+    .trial-items {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .trial-item {
+      background: rgba(255,255,255,.2);
+      border: 2px solid rgba(255,255,255,.5);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 10px 22px;
+      border-radius: 50px;
+    }
+    .trial-ok {
+      color: rgba(255,255,255,.9);
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+    .trial-ok span { font-weight: 900; color: #fff; }
+    .promise-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .promise-list li {
+      background: rgba(255,255,255,.15);
+      border-radius: 10px;
+      padding: 12px 20px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      text-align: left;
+    }
+    .promise-list li::before { content: '✅ '; }
+
+    /* ====== URGENCY ====== */
+    .urgency {
+      background: var(--white);
+      padding: 64px 20px;
+      text-align: center;
+    }
+    .urgency-box {
+      background: #FFF1E8;
+      border: 2px dashed var(--orange);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+    .urgency-box p {
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 700;
+      line-height: 1.9;
+    }
+    .urgency-box .accent { color: var(--orange-dark); font-size: clamp(18px, 5vw, 26px); }
+
+    /* ====== CTA SECTION ====== */
+    .cta-section {
+      background: var(--orange-pale);
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .cta-lead {
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .cta-lead em { font-style: normal; color: var(--orange-dark); }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--line-green);
+      color: #fff;
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 900;
+      padding: 20px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(6,199,85,.4);
+      transition: transform .2s, box-shadow .2s;
+      max-width: 480px;
+      margin: 0 auto 16px;
+      line-height: 1.4;
+      letter-spacing: .02em;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(6,199,85,.5); }
+    .btn-primary .btn-icon { font-size: 24px; flex-shrink: 0; }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--orange);
+      color: #fff;
+      font-size: clamp(15px, 3.5vw, 18px);
+      font-weight: 900;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(249,115,22,.4);
+      transition: transform .2s, box-shadow .2s;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.4;
+      letter-spacing: .02em;
+    }
+    .btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(249,115,22,.5); }
+
+    .btn-note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: var(--text-main);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+    }
+
+    /* ====== DIVIDER ====== */
+    .wave {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave svg { display: block; }
+
+    /* ====== ANIMATIONS ====== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 480px) {
+      .hero { padding: 56px 16px 64px; }
+      .solution-card { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== FLOATING LINE ====== -->
+<a class="float-line" href="https://lin.ee/7GkCaNPz" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+  </svg>
+  LINEで相談する
+</a>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="inner">
+    <div class="hero-tag">📣 教室・サロン経営の方へ</div>
+    <h1>
+      その集客、<br>
+      <em>「Instagramだけ」</em>で<br>
+      止まっていませんか？
+    </h1>
+    <p class="hero-price">
+      <span>3万円台〜</span>で、<br>
+      選ばれるためのホームページを制作します
+    </p>
+    <div class="hero-free">
+      <small>✨ 今だけ ✨</small>
+      無料でお試し制作できます
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROBLEM ====== -->
+<section class="problem">
+  <div class="inner fade-up">
+    <span class="section-label">😔 こんな状態になっていませんか？</span>
+    <h2 class="section-title">
+      「なんとなく<em>選ばれていない</em><br>気がする」
+    </h2>
+
+    <ul class="check-list">
+      <li>Instagramは頑張っている</li>
+      <li>Googleマップにも載せている</li>
+      <li>でも…予約・来店につながらない</li>
+    </ul>
+
+    <div class="highlight-box">
+      実は多くの方が<br>
+      ・興味は持たれている<br>
+      ・存在も知られている<br><br>
+      でも<br>
+      <span class="big">「決め手」がない状態です</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SOLUTION ====== -->
+<section class="solution">
+  <div class="inner fade-up">
+    <span class="section-label">💡 解決策はこれです</span>
+    <h2 class="section-title">
+      その<em>"最後の一押し"</em>になるのが<br>ホームページです
+    </h2>
+
+    <div class="solution-card">
+      <ul class="bullet-list">
+        <li>あなたの教室の<strong>強み</strong></li>
+        <li><strong>選ばれる理由</strong></li>
+        <li><strong>安心感</strong></li>
+      </ul>
+      <p>これらをしっかり伝えることで、来店につながるようになります。</p>
+      <p style="color:var(--text-sub); font-size:15px;">ただし、ホームページ制作は通常<strong style="color:var(--orange-dark)">10万円以上</strong>かかることがほとんどです。<br>そこで、<strong>「まず試してから決められる」</strong>サービスを作りました。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FREE TRIAL ====== -->
+<section class="trial">
+  <div class="inner fade-up">
+    <div class="trial-badge">✨ 無料お試しHP制作 ✨</div>
+
+    <p class="trial-desc">
+      実際にあなたの教室のホームページを<br>
+      <strong>無料で作成します</strong>
+    </p>
+
+    <div class="trial-items">
+      <span class="trial-item">🎨 雰囲気</span>
+      <span class="trial-item">📐 構成</span>
+      <span class="trial-item">✏️ デザイン</span>
+    </div>
+
+    <p class="trial-ok">
+      を確認した上で<br>
+      <span>「そのまま使うか」「やめるか」</span><br>
+      を選んでいただいて大丈夫です
+    </p>
+
+    <ul class="promise-list">
+      <li>無理な営業は一切ありません</li>
+      <li>気に入らなければそのまま終了OK</li>
+      <li>まずは試してから判断できます</li>
+    </ul>
+
+    <p style="color:#fff; font-weight:700; font-size:17px; margin-bottom:20px;">
+      無料お試し制作は<br>公式LINEからお申し込みください 👇
+    </p>
+    <a class="btn-primary" href="https://lin.ee/7GkCaNPz" target="_blank" rel="noopener">
+      <span class="btn-icon">💬</span>
+      公式LINEへ進む
+    </a>
+    <p style="color:rgba(255,255,255,.75); font-size:13px; margin-top:10px;">↑ タップするとLINEに移動します</p>
+  </div>
+</section>
+
+<!-- ====== URGENCY ====== -->
+<section class="urgency">
+  <div class="inner fade-up">
+    <span class="section-label">⚠️ ご注意ください</span>
+    <h2 class="section-title">残り枠、わずかです</h2>
+    <div class="urgency-box">
+      <p>
+        現在、対応できる件数に限りがあるため<br>
+        <span class="accent">一定数に達し次第、受付を締め切らせていただきます</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FINAL CTA ====== -->
+<section class="cta-section">
+  <div class="inner fade-up">
+    <p class="cta-lead">
+      気になったなら、<em>今すぐ</em><br>
+      LINEで気軽にご相談ください✨
+    </p>
+
+    <p style="font-size:16px; font-weight:700; color:var(--text-sub); margin-bottom:24px;">
+      無料お試し制作は公式LINEからお申し込みください 👇
+    </p>
+
+    <a class="btn-primary" href="https://lin.ee/7GkCaNPz" target="_blank" rel="noopener">
+      <span class="btn-icon">👉</span>
+      無料でお試し制作を依頼する
+    </a>
+
+    <p class="btn-note">✅ 無料 ✅ 無理な営業なし ✅ いつでも断れます</p>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <p>© 2025 ホームページ制作サービス. All rights reserved.</p>
+</footer>
+
+<script>
+  // Intersection Observer for fade-up
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
