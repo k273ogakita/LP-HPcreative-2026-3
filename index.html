@@ -824,6 +824,55 @@ footer {
     <h2>お店の希望・雰囲気に合わせて<br><em>1つ1つ丁寧に</em>制作しています</h2>
     <p class="case-sub">テンプレートではなく、内容・雰囲気などご要望に合わせて制作<br><span style="font-size:12px;color:var(--text-muted);font-weight:400;">※以下はサンプルHPです。
       他の事例や、あなたの業種に近いサンプルはLINEでご案内しています。</span></p>
+
+<p class="scroll-note">スマホ画面内をスクロールしてご覧いただけます</p>
+   <div class="phone-mockup">
+  <div class="phone-notch"></div>
+  <div class="phone-screen">
+    <img src="lp-sample.jpg" alt="教室・サロン向けホームページ制作サンプル">
+  </div>
+</div>
+
+    .phone-mockup {
+  position: relative;
+  width: 320px;
+  height: 640px;
+  background: #111;
+  border-radius: 44px;
+  padding: 16px;
+  box-shadow: 0 24px 50px rgba(0,0,0,0.25);
+  margin: 40px auto;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 24px;
+  background: #111;
+  border-radius: 0 0 16px 16px;
+  z-index: 2;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.phone-screen img {
+  width: 100%;
+  display: block;
+}
+
+    <img src="lp-sample.jpg" alt="教室・サロン向けホームページ制作サンプル">
+
+    
     <div class="case-grid">
       <div class="case-card">
         <div class="case-img-wrap">
